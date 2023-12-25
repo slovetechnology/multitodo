@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
                     </div>
                     <div className={`${!screen ? 'lg:col-span-5' : 'lg:col-span-3'} h-screen ${screen2 ? '' : 'hidden'} lg:block bg-bgmain`}>
                         <div className=""> <Navbar /> </div>
-                        <div className="h-[84.3vh] overflow-y-auto bg-sub/90">
+                        <div className="h-[90vh] pb-10 overflow-y-auto bg-sub/90">
                             {children}
                         </div>
                         <div className="fixed lg:relative bottom-0 left-0 w-full"> <ChatForm /> </div>
