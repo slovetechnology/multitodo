@@ -23,9 +23,9 @@ const SideNav = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-3 capitalize">
-                        <button onClick={() => setActive(1)} className={`text-slate-300 capitalize font-semibold border-b ${active === 1 ? 'border-green-300 text-green-300' : 'border-transparent'} py-3 text-lg`}>chats</button>
-                        <button onClick={() => setActive(2)} className={`text-slate-300 capitalize font-semibold border-b ${active === 2 ? 'border-green-300 text-green-300' : 'border-transparent'} py-3 text-lg`}>groups</button>
-                        <button onClick={() => setActive(3)} className={`text-slate-300 capitalize font-semibold border-b ${active === 3 ? 'border-green-300 text-green-300' : 'border-transparent'} py-3 text-lg`}>feeds</button>
+                        <button onClick={() => setActive(1)} className={`capitalize font-semibold border-b ${active === 1 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>chats</button>
+                        <button onClick={() => setActive(2)} className={`capitalize font-semibold border-b ${active === 2 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>groups</button>
+                        <button onClick={() => setActive(3)} className={`capitalize font-semibold border-b ${active === 3 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>feeds</button>
                     </div>
                 </div>
             </div>
