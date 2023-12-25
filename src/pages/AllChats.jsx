@@ -3,6 +3,7 @@ import img from '../assets/images/avatar.png'
 import ImageViewer from '../components/ImageViewer'
 import { MEDIASCREEN } from '../components/store'
 import { useAtom } from 'jotai'
+import { BiCommentDetail } from 'react-icons/bi'
 
 const AllChats = () => {
     const [show, setShow] = useState(false)
@@ -18,6 +19,7 @@ const AllChats = () => {
     }
     return (
         <div>
+        <button className="fixed bottom-5 right-3 bg-badge text-3xl shadow-xl active:scale-75 lg:hidden p-2 rounded-lg text-dark"> <BiCommentDetail /> </button>
             {show && <ImageViewer closeView={() => setShow(false)} /> }
             {new Array(50).fill(0).map((item, i) => (
                 <div className="flex items-center gap-3 pt-2 px-2 hover:bg-main" key={i}>

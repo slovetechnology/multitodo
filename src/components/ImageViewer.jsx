@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import screens from '../assets/images/screens.png'
-import { BiAlarmExclamation, BiCommentDetail, BiPhone } from 'react-icons/bi'
-import { FaArrowLeft, FaExclamationCircle, FaPhoneAlt, FaVideo } from 'react-icons/fa'
-import { BsCameraVideoFill, BsExclamationCircle } from 'react-icons/bs'
+import { BiCommentDetail } from 'react-icons/bi'
+import { FaArrowLeft, FaPhoneAlt, FaVideo } from 'react-icons/fa'
+import { BsExclamationCircle } from 'react-icons/bs'
 
 const ImageViewer = ({ closeView }) => {
     const [zone, setZone] = useState(0)

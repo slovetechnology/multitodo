@@ -3,13 +3,16 @@ import img from '../assets/images/avatar.png'
 import { FaEllipsisV, FaSearch } from 'react-icons/fa'
 import { MdFilterList } from 'react-icons/md'
 import AllChats from '../pages/AllChats'
-import { BiSolidCamera } from 'react-icons/bi'
+import { BiUser } from 'react-icons/bi'
 import { BsCamera, BsSearch } from 'react-icons/bs'
 import AllGroups from '../pages/AllGroups'
 import AllFeeds from '../pages/AllFeeds'
+import { useAtom } from 'jotai'
+import { ACTIVEROUTE, ROUTES } from './store'
 
 const SideNav = () => {
-    const [active, setActive] = useState(1)
+    const [screens, setScreens] = useAtom(ROUTES)
+    const [active, setActive] = useAtom(ACTIVEROUTE)
     return (
         <div>
             <div className="lg:hidden">
@@ -19,13 +22,13 @@ const SideNav = () => {
                         <div className="flex items-center gap-6">
                             <button className='text-white text-xl'> <BsCamera /> </button>
                             <button className='text-white text-xl'> <BsSearch /> </button>
-                            <button className='text-white text-xl'> <FaEllipsisV /> </button>
+                            <button className='text-white text-xl'> <BiUser /> </button>
                         </div>
                     </div>
                     <div className="grid grid-cols-3 capitalize">
-                        <button onClick={() => setActive(1)} className={`capitalize font-semibold border-b ${active === 1 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>chats</button>
-                        <button onClick={() => setActive(2)} className={`capitalize font-semibold border-b ${active === 2 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>groups</button>
-                        <button onClick={() => setActive(3)} className={`capitalize font-semibold border-b ${active === 3 ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>feeds</button>
+                        <button onClick={() => setActive(screens.allChats)} className={`capitalize font-semibold border-b-2 ${active === screens.allChats ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>chats</button>
+                        <button onClick={() => setActive(screens.allGroups)} className={`capitalize font-semibold border-b-2 ${active === screens.allGroups ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>groups</button>
+                        <button onClick={() => setActive(screens.allFeeds)} className={`capitalize font-semibold border-b-2 ${active === screens.allFeeds ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>feeds</button>
                     </div>
                 </div>
             </div>
@@ -52,9 +55,9 @@ const SideNav = () => {
                 </div>
             </div>
             <div className="h-[84.5vh] mt-auto overflow-y-auto pb-20">
-                {active === 1 && <AllChats />}
-                {active === 2 && <AllGroups />}
-                {active === 3 && <AllFeeds />}
+                {active === screens.allChats && <AllChats />}
+                {active === screens.allGroups && <AllGroups />}
+                {active === screens.allFeeds && <AllFeeds />}
             </div>
         </div>
     )
