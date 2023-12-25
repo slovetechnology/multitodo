@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -7,47 +12,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.input {
-  width: 100%;
-  outline: none;
-  padding: 0.5rem;
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
-.container {
-  width: 100%;
-  max-width: 32rem;
-  margin: 5% auto;
+.bgimg {
+  background: url(`./assets/images/bg.png`);
 }
-.submit {
-  padding: 0.5rem 1.3rem;
-  outline: none;
-  border: none;
-  border-radius: 0.3rem;
-  background: black;
-  color: white;
+.outgoes::before {
+  content: '';
+  border-style: solid;
+  border-width: 0.8rem;
+  border-color: #265d4c transparent transparent #265d4c;
+  position: absolute;
+  top: 0;
+  right: -1rem;
 }
-.content-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-.content {
-  border: 1px solid grey;
-  padding: 0.3rem 1rem;
-  border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.box {
-  width: 0.6rem;
-  height: 0.6rem;
-  border: 1px solid grey;
-  border-radius: 0.1rem;
-  cursor: pointer;
-}
-.boxchecked {
-  background: blue;
+.incomes::before {
+  content: '';
+  border-style: solid;
+  border-width: 0.8rem;
+  border-color: #202c33 #202c33 transparent transparent;
+  position: absolute;
+  top: 0;
+  left: -1rem;
 }
