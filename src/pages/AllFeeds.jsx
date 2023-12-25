@@ -9,6 +9,7 @@ import FeedsButtons from '../components/FeedsButtons'
 const AllFeeds = () => {
     const [routes, setRoutes] = useAtom(ROUTES)
     const [active, setActive] = useAtom(ACTIVEROUTE)
+
     
     return (
         <>
