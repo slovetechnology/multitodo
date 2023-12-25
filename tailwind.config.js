@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         "check": "#52bae7",
+        "badge": "#4ca984",
       },
       backgroundColor: {
         "main": "#202c33",
