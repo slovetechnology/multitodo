@@ -5,6 +5,8 @@ import { MdFilterList } from 'react-icons/md'
 import AllChats from '../pages/AllChats'
 import { BiSolidCamera } from 'react-icons/bi'
 import { BsCamera, BsSearch } from 'react-icons/bs'
+import AllGroups from '../pages/AllGroups'
+import AllFeeds from '../pages/AllFeeds'
 
 const SideNav = () => {
     const [active, setActive] = useState(1)
@@ -50,7 +52,9 @@ const SideNav = () => {
                 </div>
             </div>
             <div className="h-[84.5vh] mt-auto overflow-y-auto pb-20">
-                <AllChats />
+                {active === 1 && <AllChats />}
+                {active === 2 && <AllGroups />}
+                {active === 3 && <AllFeeds />}
             </div>
         </div>
     )
