@@ -12,11 +12,11 @@ const SingleFeed = () => {
     const [routes, setRoutes] = useAtom(ROUTES)
     const [active, setActive] = useAtom(ACTIVEROUTE)
     return (
-        <div className=''>
-            <div className='bg-main text-slate-300'>
+        <div className='bg-side'>
+            <div className=' text-slate-300'>
                 <div className="flex items-center justify-between w-11/12 mx-auto py-1">
                     <div className="flex items-center gap-4">
-                        <button onClick={() => setActive(routes.allFeeds)} className='lg:hidden text-2xl'> <FaArrowLeft /> </button>
+                        <button onClick={() => setActive(routes.allFeeds)} className='text-2xl'> <FaArrowLeft /> </button>
                         <div className="flex cursor-pointer items-center gap-2">
                             <img src={img} alt="" className="w-10 lg:w-14 h-10 lg:h-14 rounded-full object-cover" />
                             <div className="">
@@ -31,7 +31,7 @@ const SingleFeed = () => {
                     </div>
                 </div>
             </div>
-            <div className="overflow-y-auto h-screen pb-20">
+            <div className="overflow-y-auto h-screen pb-20 lg:w-11/12 mx-auto">
                 <div onClick={() => setActive(routes.singleFeeds)} className="bg-side cursor-pointer"> <img src={img1} alt="" className="w-full h-[20rem] object-contain" /> </div>
                 <div className="p-3">
                     <FeedsButtons />

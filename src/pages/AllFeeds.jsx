@@ -10,6 +10,14 @@ const AllFeeds = () => {
     const [routes, setRoutes] = useAtom(ROUTES)
     const [active, setActive] = useAtom(ACTIVEROUTE)
 
+    const handleSingleFeed = () => {
+        if (window.innerWidth < 1000) {
+            setActive(routes.singleFeeds)
+        }else {
+            setActive(routes.singleFeeds)
+        }
+    }
+
     return (
         <>
             {new Array(20).fill(0).map((item, i) => (
@@ -26,7 +34,7 @@ const AllFeeds = () => {
                             <button className='text-slate-400 text-xl'> <FaEllipsisV /> </button>
                         </div>
                     </div>
-                    <div onClick={() => setActive(routes.singleFeeds)} className="bg-side cursor-pointer"> <img src={img} alt="" className="w-full h-[20rem] object-contain" /> </div>
+                    <div onClick={handleSingleFeed} className="bg-side cursor-pointer"> <img src={img} alt="" className="w-full h-[20rem] object-contain" /> </div>
                     <div className="p-3">
                         <div className="text-slate-200 font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam impedit minus, distinctio numquam</div>
                         <FeedsButtons />

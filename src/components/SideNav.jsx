@@ -11,11 +11,11 @@ import { useAtom } from 'jotai'
 import { ACTIVEROUTE, ROUTES } from './store'
 
 const SideNav = () => {
-    const [screens, setScreens] = useAtom(ROUTES)
+    const [routes, setRoutes] = useAtom(ROUTES)
     const [active, setActive] = useAtom(ACTIVEROUTE)
     return (
         <div>
-            <div className="lg:hidden">
+            <div className="">
                 <div className="bg-main">
                     <div className="flex items-center justify-between w-11/12 mx-auto py-4">
                         <div className="text-white text-2xl font-semibold">E-Class</div>
@@ -26,13 +26,13 @@ const SideNav = () => {
                         </div>
                     </div>
                     <div className="grid grid-cols-3 capitalize">
-                        <button onClick={() => setActive(screens.allChats)} className={`capitalize font-semibold border-b-2 ${active === screens.allChats ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>chats</button>
-                        <button onClick={() => setActive(screens.allGroups)} className={`capitalize font-semibold border-b-2 ${active === screens.allGroups ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>groups</button>
-                        <button onClick={() => setActive(screens.allFeeds)} className={`capitalize font-semibold border-b-2 ${active === screens.allFeeds ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>feeds</button>
+                        <button onClick={() => setActive(routes.allChats)} className={`capitalize font-semibold border-b-2 ${active === routes.allChats ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>chats</button>
+                        <button onClick={() => setActive(routes.allGroups)} className={`capitalize font-semibold border-b-2 ${active === routes.allGroups ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>groups</button>
+                        <button onClick={() => setActive(routes.allFeeds)} className={`capitalize font-semibold border-b-2 ${active === routes.allFeeds ? 'border-green-300 text-green-300' : 'border-transparent text-slate-300'} py-3 text-lg`}>feeds</button>
                     </div>
                 </div>
             </div>
-            <div className="hidden lg:block">
+            {/* <div className="hidden lg:block">
                 <div className='bg-main text-slate-300'>
                     <div className="flex items-center justify-between w-11/12 mx-auto py-1">
                         <div className="flex items-center gap-2">
@@ -53,11 +53,11 @@ const SideNav = () => {
                         <MdFilterList className='text-2xl text-slate-400' />
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="h-[84.5vh] mt-auto overflow-y-auto pb-20">
-                {active === screens.allChats && <AllChats />}
-                {active === screens.allGroups && <AllGroups />}
-                {active === screens.allFeeds && <AllFeeds />}
+                {[routes.allChats, routes.singleChat].includes(active) && <AllChats />}
+                {active === routes.allGroups && <AllGroups />}
+                {active === routes.allFeeds && <AllFeeds />}
             </div>
         </div>
     )

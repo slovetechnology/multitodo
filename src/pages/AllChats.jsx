@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
 import img from '../assets/images/avatar.png'
 import ImageViewer from '../components/ImageViewer'
-import { MEDIASCREEN } from '../components/store'
+import { ACTIVEROUTE, MEDIASCREEN, ROUTES } from '../components/store'
 import { useAtom } from 'jotai'
 import { BiCommentDetail } from 'react-icons/bi'
 
 const AllChats = () => {
     const [show, setShow] = useState(false)
     const [screen2, setScreen2] = useAtom(MEDIASCREEN)
+    const [active, setActive] = useAtom(ACTIVEROUTE)
+    const [routes, setRoutes] = useAtom(ROUTES)
 
     const handleViews = () => {
         // test for small screens
-        if(window.innerWidth < 600) {
+        if(window.innerWidth < 1000) {
             setScreen2(true)
         }else {
             setScreen2(false)
         }
+        setActive(routes.singleChat)
     }
     return (
         <div>
